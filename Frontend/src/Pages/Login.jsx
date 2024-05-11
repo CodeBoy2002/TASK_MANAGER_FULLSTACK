@@ -15,7 +15,7 @@ const Login = () => {
 
   return (
     <>
-    <form onSubmit={handleSubmitForm}>
+    <form className="login" onSubmit={handleSubmitForm}>
       <h3>Login User</h3>
       <label>Email: </label>
       <input
@@ -31,7 +31,7 @@ const Login = () => {
       />
 
       <button disabled={isLoading}>Login In</button>
-      {error && <div>{error}</div>}
+      {error && <div className="error">{error}</div>}
     </form>
     <p>Don't have an account</p>
     <button>

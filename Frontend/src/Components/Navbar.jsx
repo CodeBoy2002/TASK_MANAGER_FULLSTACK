@@ -13,7 +13,10 @@ const Navbar = () => {
 
   return (
     <header>
-      <nav>
+      <div className="container">
+          <Link to="/"><h1>TASK BUDDY</h1></Link>
+          <nav>
+
         {user && (
           <div>
             <span>{user.email}</span>
@@ -24,7 +27,8 @@ const Navbar = () => {
           <Link to="login">Login</Link>
           <Link to="signup">Signup</Link>
         </div>)}
-      </nav>
+        </nav>
+      </div>
     </header>
   );
 };
