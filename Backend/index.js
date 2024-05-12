@@ -26,6 +26,9 @@ app.use(cors(
     }
 ))
 
+//For testing API
+app.get('/', (req, res) => res.send("API"))
+
 //Routes
 //Authentication Route
 app.use('/api/users', userRouter)
