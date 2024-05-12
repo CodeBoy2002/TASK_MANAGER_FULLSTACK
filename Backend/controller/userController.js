@@ -11,10 +11,10 @@ export const loginUser = async(req, res) => {
     const { email, password } = req.body
 
     try {
-        const user = User.login(email, password)
+        const user = await User.login(email, password)
 
         //create a token
-        const token = await createToken(user._id)
+        const token = createToken(user._id)
 
         res.status(200).json({ email, token })
     } catch (error) {
@@ -29,7 +29,7 @@ export const registerUser = async(req, res) => {
         const user = await User.signup(email, password)   
         
         //create token
-        const token = await createToken(user._id)
+        const token = createToken(user._id)
         
         res.status(200).json({ email, token })
     } catch (error) {

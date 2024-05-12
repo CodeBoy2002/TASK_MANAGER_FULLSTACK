@@ -3,7 +3,8 @@ import { Task } from '../models/taskModel.js'
 //GET ALL THE TASKS IN DATABASE
 export const getAllTasks = async(req, res) => {
     try {
-        const getTasks = await Task.find({}).sort({ createdAt: -1 }) //Sort the documents in descending order 
+        const user_id = req.user._id
+        const getTasks = await Task.find({ user_id }).sort({ createdAt: -1 }) //Sort the documents in descending order 
         res.status(200).json(getTasks)
     } catch (error) {
         res.status(400).json({ error: error.message })

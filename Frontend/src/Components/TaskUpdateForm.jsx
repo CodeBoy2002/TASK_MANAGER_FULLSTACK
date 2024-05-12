@@ -53,7 +53,7 @@ const TaskForm = () => {
   };
   return (
     <>
-      <form onSubmit={handleUpdateTask}>
+      <form className="update-form" onSubmit={handleUpdateTask}>
         <h3>Update Task</h3>
 
         <label>Task Title:</label>

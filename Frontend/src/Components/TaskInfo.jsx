@@ -30,7 +30,7 @@ const TaskInfo = () => {
     }, [])
 
   return (
-    <div>
+    <div className='info-container'>
         <h3>Task Information</h3>
         <p>{title}</p>
         <p>{description}</p>

@@ -1,43 +1,74 @@
-TASK MANAGER PROJECT DETAILS
+Task Manager Project Overview
 
-1. Created Two Working directories names Backend and Frontend
-2. CD into the Backend Folder.
+This Task Manager project encompasses the development of both backend and frontend components to facilitate task management and user authentication. Below are the detailed steps and technologies employed:
 
-STEPS:-
-1. Initialize the project with "npm init -y" command
-2. Install necessary dependencies which help in building backend logic
-3. Created server login in index.js file -> Also the main server file in backend folder which handle all the database    connection and server running functionalities.
-4. Created Three Folders Routes, Components and Models
-   
-   1. Route -> Which will redirect to the api location (i.e:- GET, POST, PUT, DELETE)
-   2. Components -> Contains Logic Functionality to perform different CRUD based operations (i.e:- ADD USER, LOGIN USER, JSON WEB TOKEN) 
-   3. Models -> Contains schema of the database which provides the format, in which manner we have to enter user details and also contains the Two Logic based function.
-        1. Signup Statics -> To check the validation of email and password and hash the password for password security.
-        2. Login Statics -> To check the email and password is entered correct or not.
-    
-5. DATABASE CONNECTION
-   1. Used MongoDB A.K.A NO-SQL Database for this project.
-   2. Created the database with username and password in Mongo Atlas Cloud.
-   3. Enter the MONGO CONNECTION STRING URL in .env file, so that no other person accept the developer has the direct access to the CONNECTION STRING (AS it leads to data breach).
-   4. After successful connection, users data getting stored in Mongo Atlas (DB NAME:- task_manages_users_db).
+Backend Development
 
+Project Setup:
 
+Two working directories were created: Backend and Frontend.
+The development process started by navigating into the Backend folder.
+Project Initialization:
 
-6. After successful Authentication backend Logic Moved to Frontend Part.
-    1. Used Vite.js (npm create vite@latest), which is the light weight as compare to "npx create react-app".
-    2. Used AppContext and useReducer function, so that the Complex Logic of state Management becomes simple.
+Initialized the project using the command "npm init -y".
+Dependency Installation:
 
-    --> const AppContext = createContext()
-    AppContext Provided two components:- 
-        1. Provider -> Which provided the "values" and used like AppContext.Provider
-        2. Consumer -> Which is used to use the "values" provided by the AppContext.Provider, with the help of useContext() Hook.
-    
-    3. Install react-router-dom for routing in multiple pages during login ans signup process.
-        --> npm i react-router-dom
-        <Routes>
-            <Route path='/signup' element={<Signup/>} ></Route>
-            <Route path='/login' element={<Login/>} ></Route>
-        <Routes>
+Installed essential dependencies required for building backend logic.
+Server Setup:
 
-    4. Created Two Forms for user functionality SignUp and Login Form.
-        Hooks -> {useState:- Use to make the changes in the given input fields, it stores the value and triggers the re-render.}
+Created the main server file, index.js, responsible for handling all database connections and server running functionalities.
+Folder Structure:
+
+Organized the project into three folders: Routes, Components, and Models.
+Routes: Handles API endpoints for various HTTP methods (e.g., GET, POST, PUT, DELETE).
+Components: Contains logic functionalities for CRUD operations (e.g., Add User, Login User, JWT implementation).
+Models: Defines database schemas and logic-based functions for user-related operations.
+Signup Statics: Validates email and password, and hashes the password for security.
+Login Statics: Validates user credentials.
+Database Connection:
+
+Utilized MongoDB, a NoSQL database.
+Created a database with username and password in MongoDB Atlas Cloud.
+Stored the MongoDB connection string URL in the .env file for security purposes.
+Frontend Development
+
+Transition to Frontend:
+
+Transitioned backend logic to frontend implementation.
+Framework:
+
+Utilized Vite.js, known for its lightweight nature, as compared to "npx create react-app".
+State Management:
+
+Implemented state management using AppContext and useReducer function to simplify complex state logic.
+Utilized AppContext.Provider and useContext() hook for providing and consuming values.
+Routing:
+
+Incorporated react-router-dom for handling routing across multiple pages during the login and signup processes.
+Forms:
+
+Created signup and login forms using useState hook to manage input field changes.
+Pages:
+
+Designed two main pages: Home and Update, along with an Info page to display task details.
+Security Measures:
+
+Implemented robust authentication measures:
+Unique email requirement for signup.
+Strong password policy (minimum 8 characters, at least one special character, one uppercase, and one lowercase letter).
+Leveraged the Validate npm package for implementing these security features.
+API Handling
+
+Thunder Client, an inbuilt extension in VS Code, was used for API handling, akin to Postman. It offers lightweight and fast handling of API routes.
+Database
+
+MongoDB was chosen for efficient data handling.
+Styling
+
+General CSS was employed for styling purposes.
+Tools Used
+
+Development Environment: VS Code
+Database: MongoDB
+API Handling: Thunder Client
+This project amalgamates backend and frontend technologies to offer a comprehensive task management solution with robust security measures and efficient data handling capabilities.

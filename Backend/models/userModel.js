@@ -11,7 +11,7 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true
-    },
+    }
 })
 
 //static signup method -> This function must not be arrow function as it leads to an error during return the user.
