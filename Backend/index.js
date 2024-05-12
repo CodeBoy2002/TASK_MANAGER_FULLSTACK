@@ -18,13 +18,7 @@ app.use((req, res, next) => {
     next()
 })
 
-app.use(cors(
-    {
-        origin: ["https://deploy-mern-frontend.vercel.app"],
-        methods: ["POST", "GET"],
-        credentials: true
-    }
-))
+app.use(cors)
 
 //For testing API
 app.get('/', (req, res) => res.send("API"))
